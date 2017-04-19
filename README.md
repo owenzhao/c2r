@@ -1,2 +1,10 @@
-# c2r
-add a alarm at calendar event's endtime
+# c2r 
+## Calendar to Reminder
+
+c2r监控你指定的日历，当你添加新任务时，它会在任务结束的时刻，提前几分钟发出提醒。默认时间是提前3分钟。
+
+如果你开启了同步，提醒也会同步到你的其它设备。
+
+
+
+
