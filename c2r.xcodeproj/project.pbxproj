@@ -1,0 +1,747 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E6B4351B308060552CE1CAF /* Pods_c2rUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5278C9168C37480EBF8E4B7D /* Pods_c2rUITests.framework */; };
+		74573FED6ABBC219F458EA35 /* Pods_c2r.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC85244127F5EFE86660046 /* Pods_c2r.framework */; };
+		875429577BFD80AF7CC1B52F /* Pods_c2rTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7D22E586741356BA61E32 /* Pods_c2rTests.framework */; };
+		DC21E3BB1EA0D0D600463699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3BA1EA0D0D600463699 /* AppDelegate.swift */; };
+		DC21E3BD1EA0D0D600463699 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3BC1EA0D0D600463699 /* ViewController.swift */; };
+		DC21E3BF1EA0D0D600463699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC21E3BE1EA0D0D600463699 /* Assets.xcassets */; };
+		DC21E3C21EA0D0D600463699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC21E3C01EA0D0D600463699 /* Main.storyboard */; };
+		DC21E3CD1EA0D0D600463699 /* c2rTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3CC1EA0D0D600463699 /* c2rTests.swift */; };
+		DC21E3D81EA0D0D600463699 /* c2rUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3D71EA0D0D600463699 /* c2rUITests.swift */; };
+		DC21E3E71EA0F72100463699 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3E61EA0F72100463699 /* Defaults.swift */; };
+		DCF34BD61EA316AC009A52F6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF34BD51EA316AC009A52F6 /* Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC21E3C91EA0D0D600463699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC21E3AF1EA0D0D600463699 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC21E3B61EA0D0D600463699;
+			remoteInfo = c2r;
+		};
+		DC21E3D41EA0D0D600463699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC21E3AF1EA0D0D600463699 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC21E3B61EA0D0D600463699;
+			remoteInfo = c2r;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2rUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3AC85244127F5EFE86660046 /* Pods_c2r.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_c2r.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EE1D716C606F9A3B1B451EA /* Pods-c2r.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2r.release.xcconfig"; path = "Pods/Target Support Files/Pods-c2r/Pods-c2r.release.xcconfig"; sourceTree = "<group>"; };
+		5278C9168C37480EBF8E4B7D /* Pods_c2rUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_c2rUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B7D22E586741356BA61E32 /* Pods_c2rTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_c2rTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6AF1861EE3DAAF4DC7502C1 /* Pods-c2rTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2rTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB21BD6FFDB786C6715FFE85 /* Pods-c2rTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2rTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests.release.xcconfig"; sourceTree = "<group>"; };
+		D58AF53EC2BCE6125501CD31 /* Pods-c2rUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2rUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC21E3B71EA0D0D600463699 /* c2r.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = c2r.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC21E3BA1EA0D0D600463699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC21E3BC1EA0D0D600463699 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC21E3BE1EA0D0D600463699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC21E3C11EA0D0D600463699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC21E3C31EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC21E3C81EA0D0D600463699 /* c2rTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = c2rTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC21E3CC1EA0D0D600463699 /* c2rTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c2rTests.swift; sourceTree = "<group>"; };
+		DC21E3CE1EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = c2rUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC21E3D71EA0D0D600463699 /* c2rUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c2rUITests.swift; sourceTree = "<group>"; };
+		DC21E3D91EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC21E3E51EA0D3B900463699 /* c2r.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c2r.entitlements; sourceTree = "<group>"; };
+		DC21E3E61EA0F72100463699 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		DCF34BD51EA316AC009A52F6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FAC49D95402C38D9B9C49936 /* Pods-c2r.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2r.debug.xcconfig"; path = "Pods/Target Support Files/Pods-c2r/Pods-c2r.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC21E3B41EA0D0D600463699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74573FED6ABBC219F458EA35 /* Pods_c2r.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3C51EA0D0D600463699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				875429577BFD80AF7CC1B52F /* Pods_c2rTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3D01EA0D0D600463699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E6B4351B308060552CE1CAF /* Pods_c2rUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		077DC9EF2B232AF6F7867140 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AC85244127F5EFE86660046 /* Pods_c2r.framework */,
+				64B7D22E586741356BA61E32 /* Pods_c2rTests.framework */,
+				5278C9168C37480EBF8E4B7D /* Pods_c2rUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D4F610232977B2F5DF24AC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAC49D95402C38D9B9C49936 /* Pods-c2r.debug.xcconfig */,
+				4EE1D716C606F9A3B1B451EA /* Pods-c2r.release.xcconfig */,
+				B6AF1861EE3DAAF4DC7502C1 /* Pods-c2rTests.debug.xcconfig */,
+				BB21BD6FFDB786C6715FFE85 /* Pods-c2rTests.release.xcconfig */,
+				2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */,
+				D58AF53EC2BCE6125501CD31 /* Pods-c2rUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC21E3AE1EA0D0D600463699 = {
+			isa = PBXGroup;
+			children = (
+				DC21E3B91EA0D0D600463699 /* c2r */,
+				DC21E3CB1EA0D0D600463699 /* c2rTests */,
+				DC21E3D61EA0D0D600463699 /* c2rUITests */,
+				DC21E3B81EA0D0D600463699 /* Products */,
+				9D4F610232977B2F5DF24AC1 /* Pods */,
+				077DC9EF2B232AF6F7867140 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC21E3B81EA0D0D600463699 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC21E3B71EA0D0D600463699 /* c2r.app */,
+				DC21E3C81EA0D0D600463699 /* c2rTests.xctest */,
+				DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC21E3B91EA0D0D600463699 /* c2r */ = {
+			isa = PBXGroup;
+			children = (
+				DC21E3E51EA0D3B900463699 /* c2r.entitlements */,
+				DC21E3BA1EA0D0D600463699 /* AppDelegate.swift */,
+				DC21E3BC1EA0D0D600463699 /* ViewController.swift */,
+				DC21E3E61EA0F72100463699 /* Defaults.swift */,
+				DCF34BD51EA316AC009A52F6 /* Model.swift */,
+				DC21E3BE1EA0D0D600463699 /* Assets.xcassets */,
+				DC21E3C01EA0D0D600463699 /* Main.storyboard */,
+				DC21E3C31EA0D0D600463699 /* Info.plist */,
+			);
+			path = c2r;
+			sourceTree = "<group>";
+		};
+		DC21E3CB1EA0D0D600463699 /* c2rTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC21E3CC1EA0D0D600463699 /* c2rTests.swift */,
+				DC21E3CE1EA0D0D600463699 /* Info.plist */,
+			);
+			path = c2rTests;
+			sourceTree = "<group>";
+		};
+		DC21E3D61EA0D0D600463699 /* c2rUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC21E3D71EA0D0D600463699 /* c2rUITests.swift */,
+				DC21E3D91EA0D0D600463699 /* Info.plist */,
+			);
+			path = c2rUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC21E3B61EA0D0D600463699 /* c2r */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC21E3DC1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2r" */;
+			buildPhases = (
+				11EDE85510E7774F93A58E41 /* [CP] Check Pods Manifest.lock */,
+				DC21E3B31EA0D0D600463699 /* Sources */,
+				DC21E3B41EA0D0D600463699 /* Frameworks */,
+				DC21E3B51EA0D0D600463699 /* Resources */,
+				3B4D97F258509A3B2E4C3978 /* [CP] Embed Pods Frameworks */,
+				DD66DEBAA7776052C800748F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = c2r;
+			productName = c2r;
+			productReference = DC21E3B71EA0D0D600463699 /* c2r.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC21E3C71EA0D0D600463699 /* c2rTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC21E3DF1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rTests" */;
+			buildPhases = (
+				1FB54A22CD6B3C1339A941F4 /* [CP] Check Pods Manifest.lock */,
+				DC21E3C41EA0D0D600463699 /* Sources */,
+				DC21E3C51EA0D0D600463699 /* Frameworks */,
+				DC21E3C61EA0D0D600463699 /* Resources */,
+				F28F4BF7BFD2F66D64FFEEB0 /* [CP] Embed Pods Frameworks */,
+				B3BC005B9BFD7DB78AD49296 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC21E3CA1EA0D0D600463699 /* PBXTargetDependency */,
+			);
+			name = c2rTests;
+			productName = c2rTests;
+			productReference = DC21E3C81EA0D0D600463699 /* c2rTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC21E3D21EA0D0D600463699 /* c2rUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC21E3E21EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rUITests" */;
+			buildPhases = (
+				9B1C18D02847F44A22B5C008 /* [CP] Check Pods Manifest.lock */,
+				DC21E3CF1EA0D0D600463699 /* Sources */,
+				DC21E3D01EA0D0D600463699 /* Frameworks */,
+				DC21E3D11EA0D0D600463699 /* Resources */,
+				E57DEBA579E9614E4FB5BFBB /* [CP] Embed Pods Frameworks */,
+				A62E488238FC634BD977A485 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC21E3D51EA0D0D600463699 /* PBXTargetDependency */,
+			);
+			name = c2rUITests;
+			productName = c2rUITests;
+			productReference = DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC21E3AF1EA0D0D600463699 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = ParusSoft.com;
+				TargetAttributes = {
+					DC21E3B61EA0D0D600463699 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 96NM39SGJ5;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					DC21E3C71EA0D0D600463699 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 96NM39SGJ5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DC21E3B61EA0D0D600463699;
+					};
+					DC21E3D21EA0D0D600463699 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 96NM39SGJ5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DC21E3B61EA0D0D600463699;
+					};
+				};
+			};
+			buildConfigurationList = DC21E3B21EA0D0D600463699 /* Build configuration list for PBXProject "c2r" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC21E3AE1EA0D0D600463699;
+			productRefGroup = DC21E3B81EA0D0D600463699 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC21E3B61EA0D0D600463699 /* c2r */,
+				DC21E3C71EA0D0D600463699 /* c2rTests */,
+				DC21E3D21EA0D0D600463699 /* c2rUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC21E3B51EA0D0D600463699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC21E3BF1EA0D0D600463699 /* Assets.xcassets in Resources */,
+				DC21E3C21EA0D0D600463699 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3C61EA0D0D600463699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3D11EA0D0D600463699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11EDE85510E7774F93A58E41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1FB54A22CD6B3C1339A941F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B4D97F258509A3B2E4C3978 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2r/Pods-c2r-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B1C18D02847F44A22B5C008 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A62E488238FC634BD977A485 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3BC005B9BFD7DB78AD49296 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD66DEBAA7776052C800748F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2r/Pods-c2r-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57DEBA579E9614E4FB5BFBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28F4BF7BFD2F66D64FFEEB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC21E3B31EA0D0D600463699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC21E3E71EA0F72100463699 /* Defaults.swift in Sources */,
+				DC21E3BD1EA0D0D600463699 /* ViewController.swift in Sources */,
+				DC21E3BB1EA0D0D600463699 /* AppDelegate.swift in Sources */,
+				DCF34BD61EA316AC009A52F6 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3C41EA0D0D600463699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC21E3CD1EA0D0D600463699 /* c2rTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC21E3CF1EA0D0D600463699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC21E3D81EA0D0D600463699 /* c2rUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC21E3CA1EA0D0D600463699 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC21E3B61EA0D0D600463699 /* c2r */;
+			targetProxy = DC21E3C91EA0D0D600463699 /* PBXContainerItemProxy */;
+		};
+		DC21E3D51EA0D0D600463699 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC21E3B61EA0D0D600463699 /* c2r */;
+			targetProxy = DC21E3D41EA0D0D600463699 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC21E3C01EA0D0D600463699 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC21E3C11EA0D0D600463699 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC21E3DA1EA0D0D600463699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC21E3DB1EA0D0D600463699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		DC21E3DD1EA0D0D600463699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC49D95402C38D9B9C49936 /* Pods-c2r.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = c2r/c2r.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2r/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2r;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DC21E3DE1EA0D0D600463699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE1D716C606F9A3B1B451EA /* Pods-c2r.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = c2r/c2r.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2r/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2r;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DC21E3E01EA0D0D600463699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6AF1861EE3DAAF4DC7502C1 /* Pods-c2rTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2rTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/c2r.app/Contents/MacOS/c2r";
+			};
+			name = Debug;
+		};
+		DC21E3E11EA0D0D600463699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB21BD6FFDB786C6715FFE85 /* Pods-c2rTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2rTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/c2r.app/Contents/MacOS/c2r";
+			};
+			name = Release;
+		};
+		DC21E3E31EA0D0D600463699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2rUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = c2r;
+			};
+			name = Debug;
+		};
+		DC21E3E41EA0D0D600463699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D58AF53EC2BCE6125501CD31 /* Pods-c2rUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 96NM39SGJ5;
+				INFOPLIST_FILE = c2rUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = c2r;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC21E3B21EA0D0D600463699 /* Build configuration list for PBXProject "c2r" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC21E3DA1EA0D0D600463699 /* Debug */,
+				DC21E3DB1EA0D0D600463699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC21E3DC1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2r" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC21E3DD1EA0D0D600463699 /* Debug */,
+				DC21E3DE1EA0D0D600463699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC21E3DF1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC21E3E01EA0D0D600463699 /* Debug */,
+				DC21E3E11EA0D0D600463699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC21E3E21EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC21E3E31EA0D0D600463699 /* Debug */,
+				DC21E3E41EA0D0D600463699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC21E3AF1EA0D0D600463699 /* Project object */;
+}
