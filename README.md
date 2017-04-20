@@ -6,7 +6,12 @@ c2r监控你指定的日历，当你添加新任务时，它会在任务结束�
 如果你开启了同步，提醒也会同步到你的其它设备。
 
 ## 下载：
-预先编译好的版本支持10.10以上macOS。</br>
+预先编译好的版本，支持10.10以上macOS。</br>
+
+###最新
+[1.1 170420](https://github.com/owenzhao/c2r/raw/master/app/1.1.170420/c2r%201.1.170420.dmg)
+
+### 旧版
 [1.0 170419](https://github.com/owenzhao/c2r/raw/master/app/1.0.170419/c2r%201.0.170419.dmg)
 
 ## 编译方法：
@@ -21,3 +26,7 @@ Xcode 8.3.2 (8E2002)
 2. pod install
 3. open c2r.xcworkspace
 
+## 新变化
+### 版本1.1.170420
+* 修正Windows标题为c2r，之前为Window
+* 程序代码优化
