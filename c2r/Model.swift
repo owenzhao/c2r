@@ -42,7 +42,7 @@ extension EKReminder {
         self.init(eventStore: store)
         
         self.calendar = calendar
-        title = String(format: "\"%@\"在%d分钟后结束", event.title, minutes)//event.title
+        title = String(format: "\"%@\"将于%d分钟后结束", event.title, minutes)//event.title
         timeZone = event.timeZone
         notes = event.notes
         recurrenceRules = event.recurrenceRules

@@ -205,6 +205,7 @@ class ViewController: NSViewController {
     private func eventChanged(events:[EKEvent]) {
         defer { self.setupRxNotification() }
         // MARK: - keep data in Realm is updated
+        let now = Date()
         let realm = crEvents.realm!
         for crEvent in crEvents {
             let event = self.store.event(withIdentifier: crEvent.calendarItemIdentifier)
@@ -221,7 +222,7 @@ class ViewController: NSViewController {
                 realm.delete(crEvent.reminder!)
                 realm.delete(crEvent)
             case (.some(let event), nil):
-                if let newReminder = self.createNewReminder(event: event) {
+                if event.endDate > now, let newReminder = self.createNewReminder(event: event) {
                     try! self.store.save(newReminder, commit: false)
                     
                     realm.delete(crEvent.reminder!)
@@ -234,7 +235,7 @@ class ViewController: NSViewController {
                     realm.delete(crEvent)
                 }
             case (.some(let event), .some(let reminder)):
-                if let newReminder = self.createNewReminder(event: event) {
+                if event.endDate > now, let newReminder = self.createNewReminder(event: event) {
                     //                            if newReminder == reminder {
                     if newReminder != reminder {
                         try! self.store.remove(reminder, commit: false)
