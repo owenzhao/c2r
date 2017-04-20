@@ -8,10 +8,12 @@
 
 import Cocoa
 import EventKit
+import RxSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var store = EKEventStore()
+    let disposeBag = DisposeBag()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -24,6 +26,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         UserDefaults.standard.register(defaults: Defaults.shared)
+        
+        NotificationCenter.default.rx.notification(.NSWindowWillClose)
+            .asObservable()
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { _ in NSApp.terminate(nil) })
+            .disposed(by: disposeBag)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
