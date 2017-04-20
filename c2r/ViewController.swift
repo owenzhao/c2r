@@ -52,17 +52,6 @@ class ViewController: NSViewController {
         waitForEventKitAuthorization()
         
         initTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(eventKitAuthorized), userInfo: nil, repeats: true)
-            
-//            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] timer in
-//            let eventAccess = EKEventStore.authorizationStatus(for: .event)
-//            let reminderAccess = EKEventStore.authorizationStatus(for: .reminder)
-//            if eventAccess == .authorized && reminderAccess == .authorized {
-//                timer.invalidate()
-//                DispatchQueue.main.async { [unowned self] in
-//                    self.eventKitAuthorized()
-//                }
-//            }
-//        }
     }
     
     private func waitForEventKitAuthorization() {
@@ -196,7 +185,7 @@ class ViewController: NSViewController {
             .disposed(by: disposeBag)
         
         vEvents.asObservable()
-            .observeOn(MainScheduler.asyncInstance)
+            .skip(1)
             .subscribe(onNext: { [unowned self] events in
                 self.rxTimer?.invalidate()
                 let userInfo = events
@@ -206,7 +195,6 @@ class ViewController: NSViewController {
     }
         
     @objc private func eventChanged(timer:Timer) {
-        guard self.startButton.isEnabled == false else { return }
         defer { self.setupRxNotification() }
         // MARK: - keep data in Realm is updated
         let events = timer.userInfo as! [EKEvent]
@@ -325,12 +313,4 @@ class ViewController: NSViewController {
         
         if startButton.isEnabled == false { vEvents.value = eventQuery() }
     }
-    
-//    // MARK: - Notification
-//    private func registerNotification() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(notificationDealer), name: .EKEventStoreChanged, object: nil)
-//    }
-//    private func removeNotification() {
-//        NotificationCenter.default.removeObserver(self, name: .EKEventStoreChanged, object: nil)
-//    }
 }
