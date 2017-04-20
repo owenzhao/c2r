@@ -18,7 +18,7 @@ c2r监控你指定的日历，当你添加新任务时，它会在任务结束�
 Xcode 8.3.2 (8E2002)
 
 1. 使用Cocoapod下载第三方的库（RxSwift, RxCocoa, RealmSwift)
-2. 打开文件夹的文件
+2. 打开文件夹的`c2r.xcworkspace`文件
 
 ### 命令版本:
 
