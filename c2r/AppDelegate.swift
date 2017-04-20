@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         UserDefaults.standard.register(defaults: Defaults.shared)
         
-        NotificationCenter.default.rx.notification(.NSWindowWillClose)
+        NotificationCenter.default.rx.notification(.NSWindowDidResignMain)
             .asObservable()
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { _ in NSApp.terminate(nil) })
@@ -37,7 +37,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
 
