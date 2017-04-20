@@ -132,6 +132,11 @@ class ViewController: NSViewController {
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [unowned self] _ in self.notificationDealer() })
             .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx.notification(.NSCalendarDayChanged)
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { [unowned self] _ in self.notificationDealer() })
+            .disposed(by:disposeBag)
     }
     
     private func setupRx() {
