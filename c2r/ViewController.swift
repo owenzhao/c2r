@@ -25,10 +25,10 @@ class ViewController: NSViewController {
     var minutes:Int { return Int(alertTimeInMinutesTextField.stringValue) ?? 3 }
     
     var vEvents = Variable<[EKEvent]>([])
-    var crEvents:Results<CREvent>! = nil
+    lazy var crEvents:Results<CREvent> = try! Realm().objects(CREvent.self)
     
     var initTimer:Timer? = nil
-    var rxTimer:Timer? = nil
+    var dispatchWorkItem:DispatchWorkItem? = nil
     
     private func createNewReminder(event:EKEvent) -> EKReminder? {
         switch noAlertTimeCheckButton.state {
@@ -47,10 +47,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        crEvents = try! Realm().objects(CREvent.self)
-        
         waitForEventKitAuthorization()
-        
         initTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(eventKitAuthorized), userInfo: nil, repeats: true)
     }
     
@@ -135,7 +132,10 @@ class ViewController: NSViewController {
         
         NotificationCenter.default.rx.notification(.NSCalendarDayChanged)
             .observeOn(MainScheduler.asyncInstance)
-            .subscribe(onNext: { [unowned self] _ in self.notificationDealer() })
+            .subscribe(onNext: { [unowned self] _ in
+                self.dailyCleanUp()
+                self.notificationDealer()
+            })
             .disposed(by:disposeBag)
     }
     
@@ -192,19 +192,21 @@ class ViewController: NSViewController {
         vEvents.asObservable()
             .skip(1)
             .subscribe(onNext: { [unowned self] events in
-                self.rxTimer?.invalidate()
-                let userInfo = events
-                self.rxTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.eventChanged(timer:)), userInfo: userInfo, repeats: false)
+                let twoSeconds = DispatchTime(uptimeNanoseconds: 2 * 1000_0000_000)
+                self.dispatchWorkItem?.cancel()
+                self.dispatchWorkItem = DispatchWorkItem(block: { [unowned self] in
+                    self.eventChanged(events:events)
+                })
+                DispatchQueue.main.asyncAfter(deadline: twoSeconds, execute: self.dispatchWorkItem!)
             })
             .disposed(by: disposeBag)
     }
         
-    @objc private func eventChanged(timer:Timer) {
+    private func eventChanged(events:[EKEvent]) {
         defer { self.setupRxNotification() }
         // MARK: - keep data in Realm is updated
-        let events = timer.userInfo as! [EKEvent]
-        let realm = try! Realm()
-        for crEvent in self.crEvents {
+        let realm = crEvents.realm!
+        for crEvent in crEvents {
             let event = self.store.event(withIdentifier: crEvent.calendarItemIdentifier)
             let reminder = self.store.calendarItem(withIdentifier: crEvent.reminder!.calendarItemIdentifier) as? EKReminder
             
@@ -256,7 +258,7 @@ class ViewController: NSViewController {
         }
         
         // deal with new events
-        let eventsFromCREvents:[EKEvent] = self.crEvents
+        let eventsFromCREvents:[EKEvent] = crEvents
             .map { self.store.event(withIdentifier: $0.calendarItemIdentifier) }
             .filter { $0 != nil }
             .map { $0! }
@@ -302,9 +304,9 @@ class ViewController: NSViewController {
             .filter { date < $0.endDate }
     }
     
-    @objc private func notificationDealer() {
+    private func notificationDealer() {
         if !currentObserveOnEventCalendar.refresh() ||  !currentWriteToReminderCalendar.refresh(){
-            let alert = { () -> NSAlert in 
+            let alert = { () -> NSAlert in
                 let a = NSAlert()
                 a.alertStyle = .critical
                 a.informativeText = "当前选定的日历被删除，请重新选择"
@@ -317,5 +319,21 @@ class ViewController: NSViewController {
         setupPopUpButtons()
         
         if startButton.isEnabled == false { vEvents.value = eventQuery() }
+    }
+    
+    private func dailyCleanUp() {
+        let realm = crEvents.realm!
+        let now = Date()
+        
+        realm.beginWrite()
+        for crEvent in crEvents {
+            if let event = store.event(withIdentifier: crEvent.calendarItemIdentifier),
+                event.endDate > now
+            {
+                realm.delete(crEvent.reminder!)
+                realm.delete(crEvent)
+            }
+        }
+        try! realm.commitWrite()
     }
 }
