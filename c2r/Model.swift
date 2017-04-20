@@ -57,7 +57,7 @@ extension EKReminder {
         addAlarm(alarm)
     }
     
-    static func ==(lhs: EKReminder, rhs: EKReminder) -> Bool {
+    open override func isEqual(_ object: Any?) -> Bool {
         func optionalEqual<T:Hashable>(lhs:Optional<T>, rhs:Optional<T>) -> Bool {
             if lhs == nil { return rhs == nil }
             if rhs == nil { return lhs == nil }
@@ -65,7 +65,9 @@ extension EKReminder {
             return lhs! == rhs!
         }
         
-        guard type(of:lhs) == type(of:rhs) else { return false }
+        guard let rhs = object as? EKReminder else { return false }
+        let lhs = self
+        
         return lhs.calendar == rhs.calendar
             && lhs.title == rhs.title
             && lhs.hasRecurrenceRules == rhs.hasRecurrenceRules
@@ -74,14 +76,6 @@ extension EKReminder {
             && optionalEqual(lhs: lhs.notes, rhs: rhs.notes)
             && optionalEqual(lhs: lhs.startDateComponents, rhs: rhs.startDateComponents)
             && optionalEqual(lhs: lhs.dueDateComponents, rhs: rhs.dueDateComponents)
-    }
-    
-    open override func isEqual(_ object: Any?) -> Bool {
-        if let rhs = object as? EKReminder {
-            return (self == rhs)
-        }
-        
-        return false
     }
 }
 
