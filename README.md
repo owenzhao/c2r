@@ -9,14 +9,18 @@ c2r监控你指定的日历，当你添加新任务时，它会在任务结束�
 预先编译好的版本，支持10.10以上macOS。</br>
 
 ### 最新
-[1.1 170420](https://github.com/owenzhao/c2r/raw/master/app/1.1.170420/c2r%201.1.170420.dmg)
+[1.5 170421](https://github.com/owenzhao/c2r/raw/master/app/1.5.170421/c2r%201.5.170421.dmg)
 
 ### 旧版
+[1.1 170420](https://github.com/owenzhao/c2r/raw/master/app/1.1.170420/c2r%201.1.170420.dmg)</br>
 [1.0 170419](https://github.com/owenzhao/c2r/raw/master/app/1.0.170419/c2r%201.0.170419.dmg)
 
 ## 安装方法看这里
 
-<embed src="http://t.cn/RX6I20J" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="250" height="100" loop="true" autostart="true"></embed>
+[视频地址](http://weibo.com/1711715275/EFghh1dlV?type=comment)
+
+## 更新
+直接覆盖即可
 
 ## 编译方法：
 Xcode 8.3.2 (8E2002)
@@ -37,7 +41,6 @@ Xcode 8.3.2 (8E2002)
 * 修正：修复了一个bug。之前如果一个任务完成了，重新运行程序，会再次添加一个过期的新提醒。这个问题目前已修复。
 * 改进：当用户关闭程序窗口时，程序会自动退出。
 * 改进：提高了程序的启动速度和运行速度。
-* 改进：点击开始按钮后，程序会自动隐藏在Dock栏。这里多说一下，暂时不考虑增加隐藏到菜单栏托盘的功能。因为我觉得菜单栏里的图标已经够多了。但是为了可能会考虑把这个变成服务，也就是完全后台运行，没有图标的那种。欢迎大家在issue里给出自己的想法。
 
 ### 版本1.1.170420
 * 修正Windows标题为c2r，之前为Window
