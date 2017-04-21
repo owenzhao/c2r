@@ -223,7 +223,9 @@ class ViewController: NSViewController {
                 realm.delete(crEvent)
             case (.some(let event), nil):
                 guard event.endDate > now else { break }
-                if let newReminder = self.createNewReminder(event: event) {
+                if event.calendar == self.currentObserveOnEventCalendar,
+                    let newReminder = self.createNewReminder(event: event)
+                {
                     try! self.store.save(newReminder, commit: false)
                     
                     realm.delete(crEvent.reminder!)
@@ -237,7 +239,9 @@ class ViewController: NSViewController {
                 }
             case (.some(let event), .some(let reminder)):
                 guard event.endDate > now else { break }
-                if let newReminder = self.createNewReminder(event: event) {
+                if event.calendar == self.currentObserveOnEventCalendar,
+                    let newReminder = self.createNewReminder(event: event)
+                {
                     //                            if newReminder == reminder {
                     if newReminder != reminder {
                         try! self.store.remove(reminder, commit: false)
