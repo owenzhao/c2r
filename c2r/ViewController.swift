@@ -266,9 +266,7 @@ class ViewController: NSViewController {
         
         // deal with new events
         let eventsFromCREvents:[EKEvent] = crEvents
-            .map { self.store.event(withIdentifier: $0.calendarItemIdentifier) }
-            .filter { $0 != nil }
-            .map { $0! }
+            .flatMap { self.store.event(withIdentifier: $0.calendarItemIdentifier) }
         let newEvents = Set(events).subtracting(eventsFromCREvents)
         
         realm.beginWrite()
