@@ -30,6 +30,23 @@ class ViewController: NSViewController {
     var initTimer:Timer? = nil
     var dispatchWorkItem:DispatchWorkItem? = nil
     
+    lazy var tileView:NSView = {
+        let tile = NSApp.dockTile
+        
+        let view = NSView(frame: NSRect(x: 0, y: 0, width: tile.size.width, height: tile.size.height))
+        let icon = NSApp.applicationIconImage
+        let imageView = NSImageView(frame: NSRect(x: 0, y: 10, width: tile.size.width, height: tile.size.height))
+        imageView.image = icon
+        view.addSubview(imageView)
+        
+        let runningLabel = NSTextField(frame: NSRect(x: 0, y: 0 , width: tile.size.width, height: imageView.bounds.height * 45 / 100))
+        runningLabel.backgroundColor = #colorLiteral(red: 0.0119239362, green: 0.4746654034, blue: 0.9847092032, alpha: 1)
+        runningLabel.isBordered = false
+        view.addSubview(runningLabel)
+        
+        return view
+    }()
+    
     private func createNewReminder(event:EKEvent) -> EKReminder? {
         switch noAlertTimeCheckButton.state {
         case NSOnState:
@@ -179,6 +196,10 @@ class ViewController: NSViewController {
                 self.disableEverything()
                 self.endButton.isEnabled = true
                 self.vEvents.value = self.eventQuery()
+                
+                let tile = NSApp.dockTile
+                tile.contentView = self.tileView
+                tile.display()
             })
             .disposed(by: disposeBag)
         
@@ -186,6 +207,10 @@ class ViewController: NSViewController {
             .subscribe(onNext: { [unowned self] _ in
                 self.enableEverything()
                 self.endButton.isEnabled = false
+                
+                let tile = NSApp.dockTile
+                tile.contentView = nil
+                tile.display()
             })
             .disposed(by: disposeBag)
         
