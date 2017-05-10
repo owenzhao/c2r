@@ -13,6 +13,7 @@ struct Defaults {
         "default events calendar id": "",
         "default reminders calendar id": "",
         "alert time in minutes": -1,
-        "no alert time check": true
+        "no alert time check": true,
+        "is app running": false
     ]
 }

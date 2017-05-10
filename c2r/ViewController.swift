@@ -105,6 +105,7 @@ class ViewController: NSViewController {
     private func setup() {
         setupUI()
         setupRx()
+        restoreRunningStat()
     }
     
     private func setupUI() {
@@ -200,6 +201,8 @@ class ViewController: NSViewController {
                 let tile = NSApp.dockTile
                 tile.contentView = self.tileView
                 tile.display()
+                
+                self.defaults.set(true, forKey: "is app running")
             })
             .disposed(by: disposeBag)
         
@@ -211,6 +214,8 @@ class ViewController: NSViewController {
                 let tile = NSApp.dockTile
                 tile.contentView = nil
                 tile.display()
+                
+                self.defaults.set(false, forKey: "is app running")
             })
             .disposed(by: disposeBag)
         
@@ -365,5 +370,14 @@ class ViewController: NSViewController {
             }
         }
         try! realm.commitWrite()
+    }
+    
+    private func restoreRunningStat() {
+        DispatchQueue.main.async { [unowned self] in
+            let runningState = self.defaults.bool(forKey: "is app running")
+            if runningState {
+                self.startButton.performClick(nil)
+            }
+        }
     }
 }
