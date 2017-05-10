@@ -24,6 +24,9 @@ class ViewController: NSViewController {
     var currentWriteToReminderCalendar:EKCalendar { return reminderCalendars[reminderCalendarPopUpButton.indexOfSelectedItem] }
     var minutes:Int { return Int(alertTimeInMinutesTextField.stringValue) ?? 3 }
     
+    var eventsCalendarId:String { return defaults.string(forKey: "default events calendar id") ?? "" }
+    var remindersCalendarId:String { return defaults.string(forKey: "default reminders calendar id") ?? "" }
+    
     var vEvents = Variable<[EKEvent]>([])
     lazy var crEvents:Results<CREvent> = try! Realm().objects(CREvent.self)
     
@@ -268,7 +271,7 @@ class ViewController: NSViewController {
                     realm.delete(crEvent)
                 }
             case (.some(let event), .some(let reminder)):
-                guard event.endDate > now else { break }
+//                guard event.endDate > now else { break }
                 if event.calendar == self.currentObserveOnEventCalendar,
                     let newReminder = self.createNewReminder(event: event)
                 {
@@ -375,7 +378,10 @@ class ViewController: NSViewController {
     private func restoreRunningStat() {
         DispatchQueue.main.async { [unowned self] in
             let runningState = self.defaults.bool(forKey: "is app running")
-            if runningState {
+            if runningState
+                && self.currentObserveOnEventCalendar.calendarIdentifier == self.eventsCalendarId
+                && self.currentWriteToReminderCalendar.calendarIdentifier == self.remindersCalendarId
+            {
                 self.startButton.performClick(nil)
             }
         }
