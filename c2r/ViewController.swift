@@ -137,6 +137,9 @@ class ViewController: NSViewController {
             {
                 button.selectItem(at: index)
             }
+            else if let calendarId = calendars.first?.calendarIdentifier {
+                defaults.set(calendarId, forKey: key)
+            }
         }
         
         eventCalendars = store.calendars(for: .event).filter { $0.allowsContentModifications }
