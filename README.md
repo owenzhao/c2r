@@ -12,9 +12,9 @@ c2r监控你指定的日历，当你添加新任务时，它会在任务结束�
 [1.6.3 170516](https://github.com/owenzhao/c2r/raw/master/app/1.6.3%20170516/c2r%201.6.3%20170516.dmg)
 
 ### 旧版
-[1.6.2 170512](https://github.com/owenzhao/c2r/raw/master/app/1.6.2.170512/c2r%201.6.2%20170512.dmg)
-[1.5.5 170426](https://github.com/owenzhao/c2r/raw/master/app/1.5.5%20170426/c2r%201.5.5%20170426.dmg)
-[1.5.4 170425](https://github.com/owenzhao/c2r/raw/master/app/1.5.4%20170425/c2r%201.5.4%20170425.dmg)
+[1.6.2 170512](https://github.com/owenzhao/c2r/raw/master/app/1.6.2.170512/c2r%201.6.2%20170512.dmg)</br>
+[1.5.5 170426](https://github.com/owenzhao/c2r/raw/master/app/1.5.5%20170426/c2r%201.5.5%20170426.dmg)</br>
+[1.5.4 170425](https://github.com/owenzhao/c2r/raw/master/app/1.5.4%20170425/c2r%201.5.4%20170425.dmg)</br>
 [1.5.3 170424](https://github.com/owenzhao/c2r/raw/master/app/1.5.3%20170424/c2r%201.5.3%20170424.dmg)</br>
 [1.5.2 170423](https://github.com/owenzhao/c2r/raw/master/app/1.5.2%20170423/c2r%201.5.2%20170423.dmg)</br>
 [1.5 170421](https://github.com/owenzhao/c2r/raw/master/app/1.5.170421/c2r%201.5.170421.dmg)</br>
