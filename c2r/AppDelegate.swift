@@ -17,14 +17,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
+        requestCapabilityOfAccessesToEventAndReminder()
+        registerDefaults()
+    }
+    
+    private func requestCapabilityOfAccessesToEventAndReminder() {
         let types:[EKEntityType] = [.event, .reminder]
         types.forEach {
             store.requestAccess(to: $0) { (success, error) in
                 guard error == nil else { fatalError(error!.localizedDescription) }
             }
         }
-        
+    }
+    
+    private func registerDefaults() {
         UserDefaults.standard.register(defaults: Defaults.shared)
     }
 
