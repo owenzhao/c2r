@@ -11,7 +11,7 @@ target 'c2r' do
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
   pod 'RealmSwift'
-  pod 'RxRealm'
+  #pod 'RxRealm'
 
   target 'c2rTests' do
     inherit! :search_paths
