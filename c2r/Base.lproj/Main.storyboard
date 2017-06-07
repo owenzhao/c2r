@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -156,7 +155,7 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e8-A4-H7f">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3e8-A4-H7f">
                                 <rect key="frame" x="18" y="144" width="111" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="在日历任务完成前" id="qrh-dW-ANS">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -164,7 +163,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfb-2t-dwh">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xfb-2t-dwh">
                                 <rect key="frame" x="135" y="145" width="98" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="50A-sE-l3v"/>
@@ -196,7 +195,7 @@
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-EG-SvZ">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-EG-SvZ">
                                 <rect key="frame" x="18" y="204" width="84" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="监控该日历：" id="p67-IG-ICL">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -204,7 +203,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlO-R9-s5D">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KlO-R9-s5D">
                                 <rect key="frame" x="18" y="174" width="84" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="写入提醒到：" id="dRl-ZV-cUQ">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -215,7 +214,7 @@
                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Gde-VC-9qo">
                                 <rect key="frame" x="232" y="127" width="16" height="16"/>
                             </progressIndicator>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-MC-DTx">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-MC-DTx">
                                 <rect key="frame" x="241" y="145" width="84" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="分钟进行提醒" id="O9c-GF-fXz">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -260,11 +259,11 @@
                     </view>
                     <connections>
                         <outlet property="alertTimeInMinutesTextField" destination="Xfb-2t-dwh" id="FFX-cC-sf0"/>
+                        <outlet property="calendarGroupNamesPopUpButton" destination="CQi-lC-cOM" id="wxc-a3-qK2"/>
                         <outlet property="endButton" destination="ruu-c3-y5x" id="boX-iC-wJW"/>
-                        <outlet property="eventCalendarPopUpButton" destination="CQi-lC-cOM" id="wxc-a3-qK2"/>
                         <outlet property="noAlertTimeCheckButton" destination="Bhs-D2-gNW" id="xwA-kv-2hb"/>
                         <outlet property="progressBar" destination="Gde-VC-9qo" id="dsx-fs-cMK"/>
-                        <outlet property="reminderCalendarPopUpButton" destination="0sk-gL-Sa3" id="kWo-pe-p2e"/>
+                        <outlet property="reminderGroupNamesPopUpButton" destination="0sk-gL-Sa3" id="kWo-pe-p2e"/>
                         <outlet property="startButton" destination="ciR-hW-qca" id="5Rf-Th-qgS"/>
                     </connections>
                 </viewController>

@@ -20,12 +20,9 @@ final class ViewController: NSViewController {
     private var eventCalendars:[EKCalendar]!
     private var reminderCalendars:[EKCalendar]!
     
-    private var currentObserveOnEventCalendar:EKCalendar { return eventCalendars[eventCalendarPopUpButton.indexOfSelectedItem] }
-    private var currentWriteToReminderCalendar:EKCalendar { return reminderCalendars[reminderCalendarPopUpButton.indexOfSelectedItem] }
-    var minutes:Int { return Int(alertTimeInMinutesTextField.stringValue) ?? 3 }
-    
-    var eventsCalendarId:String { return defaults.string(forKey: "default events calendar id") ?? "" }
-    var remindersCalendarId:String { return defaults.string(forKey: "default reminders calendar id") ?? "" }
+    private var observedEventCalendar:EKCalendar { return eventCalendars[calendarGroupNamesPopUpButton.indexOfSelectedItem] }
+    private var writtenToReminderCalendar:EKCalendar { return reminderCalendars[reminderGroupNamesPopUpButton.indexOfSelectedItem] }
+    private var alertBeforeEndOfTaskInMinutes:Int { return Int(alertTimeInMinutesTextField.stringValue) ?? 3 }
     
     var vEvents = Variable<[EKEvent]>([])
     lazy var crEvents:Results<CREvent> = try! Realm().objects(CREvent.self)
@@ -57,7 +54,7 @@ final class ViewController: NSViewController {
             if timeLength > 15 * 60 { fallthrough }
             else { return nil }
         case NSOffState:
-            return EKReminder(event: event, store: eventStore, minutesBeforeEndDate: minutes, reminderCalendar: currentWriteToReminderCalendar)
+            return EKReminder(event: event, store: eventStore, minutesBeforeEndDate: alertBeforeEndOfTaskInMinutes, reminderCalendar: writtenToReminderCalendar)
         default:
             fatalError()
         }
@@ -96,8 +93,8 @@ final class ViewController: NSViewController {
     
     @IBOutlet weak var progressBar: NSProgressIndicator!
 
-    @IBOutlet weak var eventCalendarPopUpButton: NSPopUpButton!
-    @IBOutlet weak var reminderCalendarPopUpButton: NSPopUpButton!
+    @IBOutlet weak var calendarGroupNamesPopUpButton: NSPopUpButton!
+    @IBOutlet weak var reminderGroupNamesPopUpButton: NSPopUpButton!
 
     @IBOutlet weak var alertTimeInMinutesTextField: NSTextField!
     @IBOutlet weak var noAlertTimeCheckButton: NSButton!
@@ -142,10 +139,14 @@ final class ViewController: NSViewController {
             }
         }
         
-        eventCalendars = eventStore.calendars(for: .event).filter { $0.allowsContentModifications }
-        reminderCalendars = eventStore.calendars(for: .reminder).filter { $0.allowsContentModifications }
-        setupPopButton(popButton: eventCalendarPopUpButton, sourcesCalendars: eventCalendars, defaultKey: "default events calendar id")
-        setupPopButton(popButton: reminderCalendarPopUpButton, sourcesCalendars: reminderCalendars, defaultKey: "default reminders calendar id")
+        func retrieveWritableEventCalendarsFor(type:EKEntityType) -> [EKCalendar] {
+            return eventStore.calendars(for: type).filter { $0.allowsContentModifications }
+        }
+        
+        let eventCalendars = retrieveWritableEventCalendarsFor(type: .event)
+        let reminderCalendars = retrieveWritableEventCalendarsFor(type: .reminder)
+        setupPopButton(popButton: calendarGroupNamesPopUpButton, sourcesCalendars: eventCalendars, defaultKey: "default events calendar id")
+        setupPopButton(popButton: reminderGroupNamesPopUpButton, sourcesCalendars: reminderCalendars, defaultKey: "default reminders calendar id")
     }
     
     private func setupRxNotification() {
@@ -166,14 +167,14 @@ final class ViewController: NSViewController {
     private func setupRx() {
         setupRxNotification()
         
-        eventCalendarPopUpButton.rx.tap
-            .map { [unowned self] _ in self.eventCalendarPopUpButton.indexOfSelectedItem }
+        calendarGroupNamesPopUpButton.rx.tap
+            .map { [unowned self] _ in self.calendarGroupNamesPopUpButton.indexOfSelectedItem }
             .subscribe(onNext: { [unowned self] in self.defaults.set(self.eventCalendars[$0].calendarIdentifier, forKey: "default events calendar id") })
             .disposed(by: disposeBag)
         
         
-        reminderCalendarPopUpButton.rx.tap
-            .map { [unowned self] _ in self.reminderCalendarPopUpButton.indexOfSelectedItem }
+        reminderGroupNamesPopUpButton.rx.tap
+            .map { [unowned self] _ in self.reminderGroupNamesPopUpButton.indexOfSelectedItem }
             .subscribe(onNext: { [unowned self] in self.defaults.set(self.reminderCalendars[$0].calendarIdentifier, forKey: "default reminders calendar id") })
             .disposed(by: disposeBag)
         
@@ -259,7 +260,7 @@ final class ViewController: NSViewController {
                 realm.delete(crEvent)
             case (.some(let event), nil):
                 guard event.endDate > now else { break }
-                if event.calendar == self.currentObserveOnEventCalendar,
+                if event.calendar == self.observedEventCalendar,
                     let newReminder = self.createNewReminder(event: event)
                 {
                     try! self.eventStore.save(newReminder, commit: false)
@@ -275,7 +276,7 @@ final class ViewController: NSViewController {
                 }
             case (.some(let event), .some(let reminder)):
 //                guard event.endDate > now else { break }
-                if event.calendar == self.currentObserveOnEventCalendar,
+                if event.calendar == self.observedEventCalendar,
                     let newReminder = self.createNewReminder(event: event)
                 {
                     //                            if newReminder == reminder {
@@ -322,12 +323,12 @@ final class ViewController: NSViewController {
     }
     
     private func disableEverything() {
-        [eventCalendarPopUpButton, reminderCalendarPopUpButton, alertTimeInMinutesTextField, noAlertTimeCheckButton, startButton, endButton]
+        [calendarGroupNamesPopUpButton, reminderGroupNamesPopUpButton, alertTimeInMinutesTextField, noAlertTimeCheckButton, startButton, endButton]
             .forEach { $0.isEnabled = false }
     }
     
     private func enableEverything() {
-        [eventCalendarPopUpButton, reminderCalendarPopUpButton, alertTimeInMinutesTextField, noAlertTimeCheckButton, startButton, endButton]
+        [calendarGroupNamesPopUpButton, reminderGroupNamesPopUpButton, alertTimeInMinutesTextField, noAlertTimeCheckButton, startButton, endButton]
             .forEach { $0.isEnabled = true }
     }
     
@@ -340,13 +341,13 @@ final class ViewController: NSViewController {
         cps.day = cps.day! + 3
         let withInThreeDays = calendar.date(from: cps)!
         
-        let predicateForEvents = eventStore.predicateForEvents(withStart: withInLastThreeHours, end: withInThreeDays, calendars: [currentObserveOnEventCalendar])
+        let predicateForEvents = eventStore.predicateForEvents(withStart: withInLastThreeHours, end: withInThreeDays, calendars: [observedEventCalendar])
         return eventStore.events(matching: predicateForEvents)
             .filter { date < $0.endDate }
     }
     
     private func notificationDealer() {
-        if !currentObserveOnEventCalendar.refresh() ||  !currentWriteToReminderCalendar.refresh(){
+        if !observedEventCalendar.refresh() ||  !writtenToReminderCalendar.refresh(){
             let alert = { () -> NSAlert in
                 let a = NSAlert()
                 a.alertStyle = .critical
@@ -381,9 +382,12 @@ final class ViewController: NSViewController {
     private func restoreRunningStat() {
         DispatchQueue.main.async { [unowned self] in
             let runningState = self.defaults.bool(forKey: "is app running")
+            let eventsCalendarId = self.defaults.string(forKey: "default events calendar id") ?? ""
+            let remindersCalendarId = self.defaults.string(forKey: "default reminders calendar id") ?? ""
+            
             if runningState
-                && self.currentObserveOnEventCalendar.calendarIdentifier == self.eventsCalendarId
-                && self.currentWriteToReminderCalendar.calendarIdentifier == self.remindersCalendarId
+                && self.observedEventCalendar.calendarIdentifier == eventsCalendarId
+                && self.writtenToReminderCalendar.calendarIdentifier == remindersCalendarId
             {
                 self.startButton.performClick(nil)
             }
