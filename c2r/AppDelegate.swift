@@ -11,8 +11,8 @@ import EventKit
 import RxSwift
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-    lazy var store = EKEventStore()
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    lazy var eventStore = EKEventStore()
     let disposeBag = DisposeBag()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func requestCapabilityOfAccessesToEventAndReminder() {
         let types:[EKEntityType] = [.event, .reminder]
         types.forEach {
-            store.requestAccess(to: $0) { (success, error) in
+            eventStore.requestAccess(to: $0) { (success, error) in
                 guard error == nil else { fatalError(error!.localizedDescription) }
             }
         }

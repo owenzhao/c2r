@@ -12,16 +12,16 @@ import RxCocoa
 import EventKit
 import RealmSwift
 
-class ViewController: NSViewController {
-    let defaults = UserDefaults.standard
-    let store = (NSApp.delegate as! AppDelegate).store
-    var disposeBag = DisposeBag()
+final class ViewController: NSViewController {
+    private let defaults = UserDefaults.standard
+    private let eventStore = (NSApp.delegate as! AppDelegate).eventStore
+    private var disposeBag = DisposeBag()
     
-    var eventCalendars:[EKCalendar]!
-    var reminderCalendars:[EKCalendar]!
+    private var eventCalendars:[EKCalendar]!
+    private var reminderCalendars:[EKCalendar]!
     
-    var currentObserveOnEventCalendar:EKCalendar { return eventCalendars[eventCalendarPopUpButton.indexOfSelectedItem] }
-    var currentWriteToReminderCalendar:EKCalendar { return reminderCalendars[reminderCalendarPopUpButton.indexOfSelectedItem] }
+    private var currentObserveOnEventCalendar:EKCalendar { return eventCalendars[eventCalendarPopUpButton.indexOfSelectedItem] }
+    private var currentWriteToReminderCalendar:EKCalendar { return reminderCalendars[reminderCalendarPopUpButton.indexOfSelectedItem] }
     var minutes:Int { return Int(alertTimeInMinutesTextField.stringValue) ?? 3 }
     
     var eventsCalendarId:String { return defaults.string(forKey: "default events calendar id") ?? "" }
@@ -57,7 +57,7 @@ class ViewController: NSViewController {
             if timeLength > 15 * 60 { fallthrough }
             else { return nil }
         case NSOffState:
-            return EKReminder(event: event, store: store, minutesBeforeEndDate: minutes, reminderCalendar: currentWriteToReminderCalendar)
+            return EKReminder(event: event, store: eventStore, minutesBeforeEndDate: minutes, reminderCalendar: currentWriteToReminderCalendar)
         default:
             fatalError()
         }
@@ -142,8 +142,8 @@ class ViewController: NSViewController {
             }
         }
         
-        eventCalendars = store.calendars(for: .event).filter { $0.allowsContentModifications }
-        reminderCalendars = store.calendars(for: .reminder).filter { $0.allowsContentModifications }
+        eventCalendars = eventStore.calendars(for: .event).filter { $0.allowsContentModifications }
+        reminderCalendars = eventStore.calendars(for: .reminder).filter { $0.allowsContentModifications }
         setupPopButton(popButton: eventCalendarPopUpButton, sourcesCalendars: eventCalendars, defaultKey: "default events calendar id")
         setupPopButton(popButton: reminderCalendarPopUpButton, sourcesCalendars: reminderCalendars, defaultKey: "default reminders calendar id")
     }
@@ -244,8 +244,8 @@ class ViewController: NSViewController {
         let now = Date()
         let realm = crEvents.realm!
         for crEvent in crEvents {
-            let event = self.store.event(withIdentifier: crEvent.calendarItemIdentifier)
-            let reminder = self.store.calendarItem(withIdentifier: crEvent.reminder!.calendarItemIdentifier) as? EKReminder
+            let event = self.eventStore.event(withIdentifier: crEvent.calendarItemIdentifier)
+            let reminder = self.eventStore.calendarItem(withIdentifier: crEvent.reminder!.calendarItemIdentifier) as? EKReminder
             
             realm.beginWrite()
             switch (event, reminder) {
@@ -253,7 +253,7 @@ class ViewController: NSViewController {
                 realm.delete(crEvent.reminder!)
                 realm.delete(crEvent)
             case (nil,.some(let reminder)):
-                try! self.store.remove(reminder, commit: false)
+                try! self.eventStore.remove(reminder, commit: false)
                 
                 realm.delete(crEvent.reminder!)
                 realm.delete(crEvent)
@@ -262,7 +262,7 @@ class ViewController: NSViewController {
                 if event.calendar == self.currentObserveOnEventCalendar,
                     let newReminder = self.createNewReminder(event: event)
                 {
-                    try! self.store.save(newReminder, commit: false)
+                    try! self.eventStore.save(newReminder, commit: false)
                     
                     realm.delete(crEvent.reminder!)
                     let newCRReminder = CRReminder(newReminder)
@@ -280,8 +280,8 @@ class ViewController: NSViewController {
                 {
                     //                            if newReminder == reminder {
                     if newReminder != reminder {
-                        try! self.store.remove(reminder, commit: false)
-                        try! self.store.save(newReminder, commit: false)
+                        try! self.eventStore.remove(reminder, commit: false)
+                        try! self.eventStore.save(newReminder, commit: false)
                         
                         realm.delete(crEvent.reminder!)
                         let newCRReminder = CRReminder(newReminder)
@@ -290,7 +290,7 @@ class ViewController: NSViewController {
                     }
                 }
                 else {
-                    try! self.store.remove(reminder, commit: false)
+                    try! self.eventStore.remove(reminder, commit: false)
                     
                     realm.delete(crEvent.reminder!)
                     realm.delete(crEvent)
@@ -302,13 +302,13 @@ class ViewController: NSViewController {
         
         // deal with new events
         let eventsFromCREvents:[EKEvent] = crEvents
-            .flatMap { self.store.event(withIdentifier: $0.calendarItemIdentifier) }
+            .flatMap { self.eventStore.event(withIdentifier: $0.calendarItemIdentifier) }
         let newEvents = Set(events).subtracting(eventsFromCREvents)
         
         realm.beginWrite()
         newEvents.forEach { [unowned self] in
             if let newReminder = self.createNewReminder(event: $0) {
-                try! self.store.save(newReminder, commit: false)
+                try! self.eventStore.save(newReminder, commit: false)
                 
                 let crReminder = CRReminder(newReminder)
                 let crEvent = CREvent($0)
@@ -318,7 +318,7 @@ class ViewController: NSViewController {
             }
         }
         try! realm.commitWrite()
-        try! self.store.commit()
+        try! self.eventStore.commit()
     }
     
     private func disableEverything() {
@@ -340,8 +340,8 @@ class ViewController: NSViewController {
         cps.day = cps.day! + 3
         let withInThreeDays = calendar.date(from: cps)!
         
-        let predicateForEvents = store.predicateForEvents(withStart: withInLastThreeHours, end: withInThreeDays, calendars: [currentObserveOnEventCalendar])
-        return store.events(matching: predicateForEvents)
+        let predicateForEvents = eventStore.predicateForEvents(withStart: withInLastThreeHours, end: withInThreeDays, calendars: [currentObserveOnEventCalendar])
+        return eventStore.events(matching: predicateForEvents)
             .filter { date < $0.endDate }
     }
     
@@ -368,7 +368,7 @@ class ViewController: NSViewController {
         
         realm.beginWrite()
         for crEvent in crEvents {
-            if let event = store.event(withIdentifier: crEvent.calendarItemIdentifier),
+            if let event = eventStore.event(withIdentifier: crEvent.calendarItemIdentifier),
                 event.endDate > now
             {
                 realm.delete(crEvent.reminder!)
