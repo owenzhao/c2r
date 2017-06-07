@@ -555,6 +555,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -597,6 +598,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 			};
 			name = Release;
 		};
@@ -604,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAC49D95402C38D9B9C49936 /* Pods-c2r.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = c2r/c2r.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -623,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4EE1D716C606F9A3B1B451EA /* Pods-c2r.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = c2r/c2r.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -642,7 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6AF1861EE3DAAF4DC7502C1 /* Pods-c2rTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
@@ -659,7 +663,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB21BD6FFDB786C6715FFE85 /* Pods-c2rTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
@@ -676,7 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
 				INFOPLIST_FILE = c2rUITests/Info.plist;
@@ -692,7 +696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D58AF53EC2BCE6125501CD31 /* Pods-c2rUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
 				INFOPLIST_FILE = c2rUITests/Info.plist;
