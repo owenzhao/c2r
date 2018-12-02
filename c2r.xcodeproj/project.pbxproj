@@ -7,35 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E6B4351B308060552CE1CAF /* Pods_c2rUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5278C9168C37480EBF8E4B7D /* Pods_c2rUITests.framework */; };
 		74573FED6ABBC219F458EA35 /* Pods_c2r.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC85244127F5EFE86660046 /* Pods_c2r.framework */; };
-		875429577BFD80AF7CC1B52F /* Pods_c2rTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7D22E586741356BA61E32 /* Pods_c2rTests.framework */; };
 		DC21E3BB1EA0D0D600463699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3BA1EA0D0D600463699 /* AppDelegate.swift */; };
 		DC21E3BD1EA0D0D600463699 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3BC1EA0D0D600463699 /* ViewController.swift */; };
 		DC21E3BF1EA0D0D600463699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC21E3BE1EA0D0D600463699 /* Assets.xcassets */; };
 		DC21E3C21EA0D0D600463699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC21E3C01EA0D0D600463699 /* Main.storyboard */; };
-		DC21E3CD1EA0D0D600463699 /* c2rTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3CC1EA0D0D600463699 /* c2rTests.swift */; };
-		DC21E3D81EA0D0D600463699 /* c2rUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3D71EA0D0D600463699 /* c2rUITests.swift */; };
 		DC21E3E71EA0F72100463699 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21E3E61EA0F72100463699 /* Defaults.swift */; };
 		DCF34BD61EA316AC009A52F6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF34BD51EA316AC009A52F6 /* Model.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DC21E3C91EA0D0D600463699 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC21E3AF1EA0D0D600463699 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC21E3B61EA0D0D600463699;
-			remoteInfo = c2r;
-		};
-		DC21E3D41EA0D0D600463699 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC21E3AF1EA0D0D600463699 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC21E3B61EA0D0D600463699;
-			remoteInfo = c2r;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-c2rUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,12 +31,6 @@
 		DC21E3BE1EA0D0D600463699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC21E3C11EA0D0D600463699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC21E3C31EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC21E3C81EA0D0D600463699 /* c2rTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = c2rTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC21E3CC1EA0D0D600463699 /* c2rTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c2rTests.swift; sourceTree = "<group>"; };
-		DC21E3CE1EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = c2rUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC21E3D71EA0D0D600463699 /* c2rUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = c2rUITests.swift; sourceTree = "<group>"; };
-		DC21E3D91EA0D0D600463699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC21E3E51EA0D3B900463699 /* c2r.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = c2r.entitlements; sourceTree = "<group>"; };
 		DC21E3E61EA0F72100463699 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		DCF34BD51EA316AC009A52F6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -70,22 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74573FED6ABBC219F458EA35 /* Pods_c2r.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC21E3C51EA0D0D600463699 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				875429577BFD80AF7CC1B52F /* Pods_c2rTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC21E3D01EA0D0D600463699 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E6B4351B308060552CE1CAF /* Pods_c2rUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				DC21E3B91EA0D0D600463699 /* c2r */,
-				DC21E3CB1EA0D0D600463699 /* c2rTests */,
-				DC21E3D61EA0D0D600463699 /* c2rUITests */,
 				DC21E3B81EA0D0D600463699 /* Products */,
 				9D4F610232977B2F5DF24AC1 /* Pods */,
 				077DC9EF2B232AF6F7867140 /* Frameworks */,
@@ -131,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				DC21E3B71EA0D0D600463699 /* c2r.app */,
-				DC21E3C81EA0D0D600463699 /* c2rTests.xctest */,
-				DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,24 +105,6 @@
 			path = c2r;
 			sourceTree = "<group>";
 		};
-		DC21E3CB1EA0D0D600463699 /* c2rTests */ = {
-			isa = PBXGroup;
-			children = (
-				DC21E3CC1EA0D0D600463699 /* c2rTests.swift */,
-				DC21E3CE1EA0D0D600463699 /* Info.plist */,
-			);
-			path = c2rTests;
-			sourceTree = "<group>";
-		};
-		DC21E3D61EA0D0D600463699 /* c2rUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DC21E3D71EA0D0D600463699 /* c2rUITests.swift */,
-				DC21E3D91EA0D0D600463699 /* Info.plist */,
-			);
-			path = c2rUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,7 +117,6 @@
 				DC21E3B41EA0D0D600463699 /* Frameworks */,
 				DC21E3B51EA0D0D600463699 /* Resources */,
 				3B4D97F258509A3B2E4C3978 /* [CP] Embed Pods Frameworks */,
-				DD66DEBAA7776052C800748F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,48 +127,6 @@
 			productReference = DC21E3B71EA0D0D600463699 /* c2r.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DC21E3C71EA0D0D600463699 /* c2rTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC21E3DF1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rTests" */;
-			buildPhases = (
-				1FB54A22CD6B3C1339A941F4 /* [CP] Check Pods Manifest.lock */,
-				DC21E3C41EA0D0D600463699 /* Sources */,
-				DC21E3C51EA0D0D600463699 /* Frameworks */,
-				DC21E3C61EA0D0D600463699 /* Resources */,
-				F28F4BF7BFD2F66D64FFEEB0 /* [CP] Embed Pods Frameworks */,
-				B3BC005B9BFD7DB78AD49296 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC21E3CA1EA0D0D600463699 /* PBXTargetDependency */,
-			);
-			name = c2rTests;
-			productName = c2rTests;
-			productReference = DC21E3C81EA0D0D600463699 /* c2rTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DC21E3D21EA0D0D600463699 /* c2rUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC21E3E21EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rUITests" */;
-			buildPhases = (
-				9B1C18D02847F44A22B5C008 /* [CP] Check Pods Manifest.lock */,
-				DC21E3CF1EA0D0D600463699 /* Sources */,
-				DC21E3D01EA0D0D600463699 /* Frameworks */,
-				DC21E3D11EA0D0D600463699 /* Resources */,
-				E57DEBA579E9614E4FB5BFBB /* [CP] Embed Pods Frameworks */,
-				A62E488238FC634BD977A485 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC21E3D51EA0D0D600463699 /* PBXTargetDependency */,
-			);
-			name = c2rUITests;
-			productName = c2rUITests;
-			productReference = DC21E3D31EA0D0D600463699 /* c2rUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -242,30 +134,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ParusSoft.com;
 				TargetAttributes = {
 					DC21E3B61EA0D0D600463699 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 96NM39SGJ5;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
 						};
-					};
-					DC21E3C71EA0D0D600463699 = {
-						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 96NM39SGJ5;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DC21E3B61EA0D0D600463699;
-					};
-					DC21E3D21EA0D0D600463699 = {
-						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 96NM39SGJ5;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DC21E3B61EA0D0D600463699;
 					};
 				};
 			};
@@ -283,8 +164,6 @@
 			projectRoot = "";
 			targets = (
 				DC21E3B61EA0D0D600463699 /* c2r */,
-				DC21E3C71EA0D0D600463699 /* c2rTests */,
-				DC21E3D21EA0D0D600463699 /* c2rUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,20 +178,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC21E3C61EA0D0D600463699 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC21E3D11EA0D0D600463699 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -322,28 +187,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-c2r-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1FB54A22CD6B3C1339A941F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B4D97F258509A3B2E4C3978 /* [CP] Embed Pods Frameworks */ = {
@@ -352,103 +205,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-c2r/Pods-c2r-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2r/Pods-c2r-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B1C18D02847F44A22B5C008 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A62E488238FC634BD977A485 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3BC005B9BFD7DB78AD49296 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD66DEBAA7776052C800748F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2r/Pods-c2r-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E57DEBA579E9614E4FB5BFBB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rUITests/Pods-c2rUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F28F4BF7BFD2F66D64FFEEB0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-c2rTests/Pods-c2rTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -465,36 +239,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC21E3C41EA0D0D600463699 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC21E3CD1EA0D0D600463699 /* c2rTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC21E3CF1EA0D0D600463699 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC21E3D81EA0D0D600463699 /* c2rUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DC21E3CA1EA0D0D600463699 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC21E3B61EA0D0D600463699 /* c2r */;
-			targetProxy = DC21E3C91EA0D0D600463699 /* PBXContainerItemProxy */;
-		};
-		DC21E3D51EA0D0D600463699 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC21E3B61EA0D0D600463699 /* c2r */;
-			targetProxy = DC21E3D41EA0D0D600463699 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC21E3C01EA0D0D600463699 /* Main.storyboard */ = {
@@ -518,15 +263,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -549,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -569,15 +322,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -594,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -614,11 +375,10 @@
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
 				INFOPLIST_FILE = c2r/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -634,77 +394,10 @@
 				DEVELOPMENT_TEAM = 96NM39SGJ5;
 				INFOPLIST_FILE = c2r/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		DC21E3E01EA0D0D600463699 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6AF1861EE3DAAF4DC7502C1 /* Pods-c2rTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 96NM39SGJ5;
-				INFOPLIST_FILE = c2rTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/c2r.app/Contents/MacOS/c2r";
-			};
-			name = Debug;
-		};
-		DC21E3E11EA0D0D600463699 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB21BD6FFDB786C6715FFE85 /* Pods-c2rTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 96NM39SGJ5;
-				INFOPLIST_FILE = c2rTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/c2r.app/Contents/MacOS/c2r";
-			};
-			name = Release;
-		};
-		DC21E3E31EA0D0D600463699 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2740B70FFCA4B1997B5F44D9 /* Pods-c2rUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 96NM39SGJ5;
-				INFOPLIST_FILE = c2rUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = c2r;
-			};
-			name = Debug;
-		};
-		DC21E3E41EA0D0D600463699 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D58AF53EC2BCE6125501CD31 /* Pods-c2rUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 96NM39SGJ5;
-				INFOPLIST_FILE = c2rUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parussoft.c2rUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = c2r;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -725,24 +418,6 @@
 			buildConfigurations = (
 				DC21E3DD1EA0D0D600463699 /* Debug */,
 				DC21E3DE1EA0D0D600463699 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC21E3DF1EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC21E3E01EA0D0D600463699 /* Debug */,
-				DC21E3E11EA0D0D600463699 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC21E3E21EA0D0D600463699 /* Build configuration list for PBXNativeTarget "c2rUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC21E3E31EA0D0D600463699 /* Debug */,
-				DC21E3E41EA0D0D600463699 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
