@@ -1,6 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 #platform :ios, '9.0'
-platform :osx, '10.10'
+
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+platform :osx, '10.13'
 inhibit_all_warnings!
 
 target 'c2r' do
@@ -8,16 +11,16 @@ target 'c2r' do
   use_frameworks!
 
   # Pods for c2r
-  pod 'RxSwift',    '~> 3.0'
-  pod 'RxCocoa',    '~> 3.0'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
   pod 'RealmSwift'
   #pod 'RxRealm'
 
   target 'c2rTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking', '~> 3.0'
-    pod 'RxTest',     '~> 3.0'
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
     
   end
 
