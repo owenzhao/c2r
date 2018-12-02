@@ -49,18 +49,17 @@ final class ViewController: NSViewController {
     
     private func createNewReminder(event:EKEvent) -> EKReminder? {
         switch noAlertTimeCheckButton.state {
-        case NSOnState:
+        case .on:
             let timeLength = event.endDate.timeIntervalSince(event.startDate)
             if timeLength > 15 * 60 { fallthrough }
             else { return nil }
-        case NSOffState:
+        case .off:
             return EKReminder(event: event, store: eventStore, minutesBeforeEndDate: alertBeforeEndOfTaskInMinutes, reminderCalendar: writtenToReminderCalendar)
         default:
             fatalError()
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -118,7 +117,7 @@ final class ViewController: NSViewController {
         
         noAlertTimeCheckButton.state = {
             let state = defaults.bool(forKey: "no alert time check")
-            return state ? NSOnState : NSOffState
+            return state ? .on : .off
         }()
         
         self.enableEverything()
@@ -196,7 +195,7 @@ final class ViewController: NSViewController {
             .disposed(by:disposeBag)
         
         noAlertTimeCheckButton.rx.state
-            .subscribe(onNext: { [unowned self]  in self.defaults.set($0 == NSOnState, forKey: "no alert time check") })
+            .subscribe(onNext: { [unowned self]  in self.defaults.set($0 == .on, forKey: "no alert time check") })
             .disposed(by: disposeBag)
         
         startButton.rx.tap
@@ -303,7 +302,7 @@ final class ViewController: NSViewController {
         
         // deal with new events
         let eventsFromCREvents:[EKEvent] = crEvents
-            .flatMap { self.eventStore.event(withIdentifier: $0.calendarItemIdentifier) }
+            .compactMap { self.eventStore.event(withIdentifier: $0.calendarItemIdentifier) }
         let newEvents = Set(events).subtracting(eventsFromCREvents)
         
         realm.beginWrite()

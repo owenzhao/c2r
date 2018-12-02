@@ -11,9 +11,9 @@ import RealmSwift
 import EventKit
 
 class CREvent:Object {
-    dynamic var calendarItemIdentifier: String = ""
-    dynamic var calendarItemExternalIdentifier: String = ""
-    dynamic var reminder:CRReminder? = nil
+    @objc dynamic var calendarItemIdentifier: String = ""
+    @objc dynamic var calendarItemExternalIdentifier: String = ""
+    @objc dynamic var reminder:CRReminder? = nil
     
     override class func primaryKey() -> String? { return "calendarItemIdentifier" }
     
@@ -25,8 +25,8 @@ class CREvent:Object {
 }
 
 class CRReminder:Object {
-    dynamic var calendarItemIdentifier: String = ""
-    dynamic var calendarItemExternalIdentifier: String = ""
+    @objc dynamic var calendarItemIdentifier: String = ""
+    @objc dynamic var calendarItemExternalIdentifier: String = ""
     
     override class func primaryKey() -> String? { return "calendarItemIdentifier" }
     
